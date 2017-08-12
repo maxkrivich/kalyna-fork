@@ -20,21 +20,25 @@ EXECUTABLE_NAME = kalyna_test
 
 
 build: create_directories create_executable
-	echo "Build successful!"
+	@echo "Build successful!"
 
 create_executable: create_objects
 	$(CC) $(LDFLAGS) $(OBJECT_FILES) -o $(BIN)/$(EXECUTABLE_NAME)
-	echo "Created executable."
+	@echo "Created executable."
 
 create_objects: $(SOURCE_FILES)
-	echo "Created objects."
+	@echo "Created objects."
 
 create_directories:
-	mkdir -p $(OBJ)
+	@mkdir -p $(OBJ)
 
 %.c:
-	echo "Compiling "$@
+	@echo "Compiling "$@
 	$(CC) $(LDFLAGS) -c $(SRC)/$@ -o $(OBJ)/$(patsubst %.c,%.o,$@)
 
+test: build
+	@echo "\n\nRun test"
+	$(BIN)/$(EXECUTABLE_NAME)
+
 clean:
-	rm -rf $(BIN)
+	@rm -rf $(BIN)
