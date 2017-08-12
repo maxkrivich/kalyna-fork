@@ -58,4 +58,4 @@ docs/_build/
 target/
 
 # Compiled binaries
-reference/kalyna
+bin/
