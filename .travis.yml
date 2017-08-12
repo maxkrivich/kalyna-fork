@@ -1,7 +1,6 @@
-language: cpp
+language: c
 
 compiler:
-  - clang
   - gcc
 
 script:

@@ -2,7 +2,7 @@
 
 CC = gcc
 
-CFLAGS += -Wall -Wextra
+CFLAGS += -Wall -Wextra -std=c99
 
 # Folders
 SRC = src
@@ -34,7 +34,7 @@ create_directories:
 
 %.c:
 	@echo "Compiling "$@
-	$(CC) $(LDFLAGS) -c $(SRC)/$@ -o $(OBJ)/$(patsubst %.c,%.o,$@)
+	$(CC) $(LDFLAGS) -c $(SRC)/$@ -o $(OBJ)/$(patsubst %.c,%.o,$@) $(CFLAGS)
 
 test: build
 	@echo "\n\nRun test"
