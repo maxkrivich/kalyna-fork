@@ -31,5 +31,3 @@ kalyna.c:  transformations.h tables.h
 
 .c.o:
 	$(CC) $(CFLAGS) -o $@ -c $<
-
-#

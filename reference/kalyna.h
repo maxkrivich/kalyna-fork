@@ -21,11 +21,11 @@ typedef unsigned long long uint64_t;
  * Context to store Kalyna cipher parameters.
  */
 typedef struct {
-    size_t nb;  /**< Number of 64-bit words in enciphering block. */
-    size_t nk;  /**< Number of 64-bit words in key. */
-    size_t nr;  /**< Number of enciphering rounds. */
-    uint64_t* state;  /**< Current cipher state. */
-    uint64_t** round_keys;  /**< Round key computed from enciphering key. */
+        size_t nb; /**< Number of 64-bit words in enciphering block. */
+        size_t nk; /**< Number of 64-bit words in key. */
+        size_t nr; /**< Number of enciphering rounds. */
+        uint64_t* state; /**< Current cipher state. */
+        uint64_t** round_keys; /**< Round key computed from enciphering key. */
 } kalyna_t;
 
 
@@ -84,4 +84,3 @@ void KalynaEncipher(uint64_t* plaintext, kalyna_t* ctx, uint64_t* ciphertext);
 void KalynaDecipher(uint64_t* ciphertext, kalyna_t* ctx, uint64_t* plaintext);
 
 #endif  /* KALYNA_H */
-
